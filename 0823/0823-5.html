@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>boder의 박스사이즈 맞추기 float의 이해</title>
+    <style>
+        section, aside,div,footer {box-sizing : border-box;}
+        section, aside { border: solid red; float: left; width : 50;}
+        section {width: 70%;}
+        aside {width: 25%; margin-left: 10px;}
+        div, img { width : 150px; height : 150px; float: left; margin-right: 10px; margin-bottom: 20px;}
+        div { border : 1px solid black; box-sizing : border-box;}
+        footer, .clearfix {content:""; clear: both;}
+       
+    </style>
+</head>
+<body>
+    <header><h1>Gallery</h1></header>
+    <content>
+         <section>
+              <img src="../safe_image.gif">
+              <div>고양이는 고양고양 </div>
+              <img src="../safe_image.gif">
+              <div>고양이는 고양고양 </div>
+              <img src="../safe_image.gif">
+              <div>고양이는 고양고양 </div>
+        </section>
+    </content>
+    <aside>
+        aside
+        <img src="../safe_image.gif">
+    </aside>
+    <footer><p></p>저작권 : 누구나 쓸수 있습니다.</p></footer>
+</body>
+</html>

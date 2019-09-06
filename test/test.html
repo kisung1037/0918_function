@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+    .chk {border: 2px solid lightgreen; background-color: lime;}
+    .demo {
+      position: static;
+    }
+    .relative {
+      position: relative;
+      left: 30px; top: 50px;
+    }
+
+    .fixed {
+      position: fixed;
+      bottom:0; right: 0;left: 700px;
+      width: 70px;
+    }
+    .absolute {
+      top: 100px;right: 0;width: 200px;height: 200px;;
+    }
+
+</style>
+<body>
+  <h1>포지션 사용</h1>
+    <ul>
+      <li><b>static</b></li>
+      HTML element가 위치하는 기본값으로 페이지의 정상적인 흐름에 따라 배치되고, element의 위치에 영향을 주지 않는 상태이다.<br>
+      화면이 스크롤되면 함께 스크롤된다.
+      static인 경우 top, bottom, left, right는 영향을 받지 못 한다.
+      <li><b>relative</b></li>
+      페이지의 정상적인 흐름에 따라 보통의 위치를 가진다.
+      top, bottom, left, right 속성을 추가하면 element의 위치에서 지정된 방향의 크기 만큼 이동한다.<br>
+      이동을 하고 콘텐츠가 있던 공간과 크기는 유지되어 다른 콘텐츠가 남겨진 공간에 맞춰 조정되지 않는다.
+      화면이 스크롤되면 함께 스크롤된다.
+      <li><b>fixed</b></li>
+      viewport를 기준으로 배치되어 항상 일정한 위치를 유지한다.
+      화면이 스크롤되어도 스크롤 되지 않고, viewport에서 자신의 고정된 위치를 유지하고 있는다.<br>
+      top, bottom, left, right 속성으로 viewport에서의 위치를 설정한다.<br>
+      fixed를 지정하면 화면의 공간을 차지하지 않는다.(땅(?)에 대한 소유권을 잃어 버린다.)<br>
+      viewport에서 top,left는 왼쪽 상단을 말하고, bottom, right는 오른쪽 하단으로 부터의 거리를 설정하게 된다.<br>
+      <li><b>absolute</b></li>
+      가장 가까운 positioned ancestor(조상)을 기준으로 위치를 가진다.<br>
+      positioned ancestor(조상)가 없으면 문서의 body에 대해 위치를 가지며 화면이 스크롤되면 함께 스크롤된다.<br>
+      top, bottom, left, right 속성으로 positioned ancestor(조상)에서의 위치를 설정한다.<br>
+      positioned ancestor(조상)에는 static 속성값인 경우 제외된다.<br>
+      화면의 공간을 차지하지 않는다.(땅(?)에 대한 소유권을 잃어 버린다.)<br>
+    </ul>
+    <div class="demo chk">샘플</div>
+    Favorite books
+    These are a few of my favorite books.The Belgariad
+    Five books by David and Leigh Eddings.The Hitchhiker’s Guide to the GalaxyA trilogy of five books by Douglas Adams.
+    These are a few of my favorite books.The Belgariad
+    Five books by David and Leigh Eddings.The Hitchhiker’s Guide to the GalaxyA trilogy of five books by Douglas Adams.
+    <div class="relative chk">relative div</div>
+    These are a few of my favorite books.The Belgariad
+    Five books by David and Leigh Eddings.The Hitchhiker’s Guide to the GalaxyA trilogy of five books by Douglas Adams.These are a few of my favorite books.The Belgariad
+    Five books by David and Leigh Eddings.The Hitchhiker’s Guide to the GalaxyA trilogy of five books by Douglas Adams.
+    <div class="fixed chk">fixed div</div>
+      These are a few of my favorite books.The Belgariad
+    Five books by David and Leigh Eddings.The Hitchhiker’s Guide to the GalaxyA trilogy of five books by Douglas Adams.These are a few of my favorite books.The Belgariad
+    Five books by David and Leigh Eddings.The Hitchhiker’s Guide to the GalaxyA trilogy of five books by Douglas Adams.
+    <div class="absolute chk">absolute div</div>
+    These are a few of my favorite books.The Belgariad
+    Five books by David and Leigh Eddings.The Hitchhiker’s Guide to the GalaxyA trilogy of five books by Douglas Adams.These are a few of my favorite books.The Belgariad
+    Five books by David and Leigh Eddings.The Hitchhiker’s Guide to the GalaxyA trilogy of five books by Douglas Adams.
+</body>
+</html>

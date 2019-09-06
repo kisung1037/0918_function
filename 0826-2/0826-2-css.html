@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS </title>
+</head>
+<style>
+    .mycolor {background-color: black;}
+    .mycolor2 {background-color: rgb(255,0,0);}
+    .mycolor3 {background-color: blue;}
+    body {
+        /* background-image: url("../img/logo.gif"); */
+        background-size: 70%;
+        /* background-repeat: no-repeat; repeat-x, repeat-y */
+        background-attachment: fixed;
+    }
+    div {
+        height: 50px;
+    }
+
+    .mybd {
+        border : dotted red;
+         /* dotted,solid,dashed, double */
+          /* booder-top-style: dotted 보더는 상하좌우로 나뉘어서 지정할수 있음*/ 
+    }
+</style>
+<body>
+    <div class="mycolor3">색상</div>
+    <div></div>
+    <div class="mybd" style="background-image : url('../img/nocopy.jpg'); background-repeat : repeat-x;">보더</div>
+    <div style="width: 100px; height: 100px; margin: 10px 20px 30px 40px; border:1px solid red;">보더박스</div>
+    <div style="width: 100px; height: 100px; margin-left: 50px; border:1px solid red;">보더박스</div>
+    <div style="width: 100px; height: 100px; margin-bottom: 50px; border:1px solid red;">보더박스</div>
+    <div style="width: 100px; height: 100px; margin: 10px 20px 30px 40px; border:1px solid red;">보더박스</div>
+    <div style="width: 100px; height: 100px; margin: 10px 20px; border:1px solid red;">보더박스</div>
+</body>
+</html>

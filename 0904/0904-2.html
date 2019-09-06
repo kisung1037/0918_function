@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>반응형 메뉴바</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link rel="stylesheet" href="./0904.css">
+</head>
+<body>
+    <div class="topnav clearfix" id="myTopnav">
+        <a href="#"><i class="fa fa-home"></i>홈</a>
+        <div class="dropdown">
+            <a href="#" class="dropbtn"><i class="fa fa-envelope"></i>뉴스</a>
+            <div class="dropdown_content">
+                <a href="#">호랑이</a>
+                <a href="#">사자</a>
+                <a href="#">기린</a>
+            </div>
+        </div>
+        <a href="#">연락처</a>
+        <a href="#">자기소개</a>
+        <a href="javascript:void(0)" class="icon" onclick="my(this)"><i class="fa fa-bars"></i></a>
+        <input type="text" class="search_input" placeholder="검색">
+    </div>
+    <h1>동물농장</h1>
+    <p>[밀봉이/5년차/전산관리(AD)/평택] [오전 11:40] 아직 잇을거에요~
+            저도 거기 다녓엇는데 ㅋ
+            [리버/12년/운영파트/서울] [오전 11:41] 있어요. 주식 아직 상폐 안됐어요^^;
+            [초보/3년/SI잡부>서버운영/서울] [오전 11:45] 작년 초까지만해도..퓨전이랑 틸론이랑해서 국산은 좀 했던거같은데
+            [초보/3년/SI잡부>서버운영/서울] [오전 11:46] 작년에도 계셨나요..?ㅎ
+            </p>
+    
+    <script>
+        function my(){
+            var x= document.getElementById('myTopnav');
+            // if (x.className === 'topnav clearfix') {
+            //     x.className += ' responsive';
+            // } else {
+            //     x.className = 'topnav clearfix';
+            // }
+            x.classList.toggle('responsive')
+        }
+    </script>
+</body>
+</html>

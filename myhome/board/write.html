@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>게시판 - 쓰기</title>
+    <link rel="stylesheet" href="/myhome/css/base.css">
+    <link rel="stylesheet" href="/myhome/css/cafe.css">
+</head>
+
+<body>
+    <!-- 헤더 -->
+    <header>
+        <a href="/myhome/index.html"><img src="/myhome/img/logo.png" alt="logo"></a>
+    </header>
+    <!-- 전역 메뉴 바 -->
+    <ul class="gnb">
+            <li><a href="/myhome/index.html">홈</a></li>
+            <li><a href="/myhome/portfolio/calc.html">계산기</a></li>
+            <li><a href="/myhome/board/list.html">게시판</a></li>
+            <li class="float_r"><a href="/myhome/sitemap.html">Sitemap</a></li>
+            <li class="float_r"><a href="/myhome/login.html">로그인</a></li>
+    </ul>
+    <div class="clearfix" style="margin-bottom: 20px;"></div>
+    <!-- 컨텐츠 -->
+    <section>
+        <div class="content">
+            <h1>글 작성</h1>
+            <!-- 제목과 같이 짧은 문장은 input -->
+            <form action="">
+            <div class="title">
+                <label for="post_title_id">제목</label>
+                <input type='text' name='post_title' id='post_title_id'>
+            </div>
+            <!-- 블로그 글과 같이 긴문장은 textarea -->
+            <div>
+                <label for="post_text_id">내용: </label>
+                <textarea name="post_text" id="post_text_id" cols="30" rows="10"></textarea>
+            </div>
+            </form>
+             <div class="menu">
+                 <button type="button">등록</button>
+                 <button type="button">취소</button>
+                 <button type="button">초기화</button>
+            </div>
+        </div>
+    </section>
+    <!-- 풋터 -->
+    <footer>
+            <address>
+                    북위 35.95° 동경 128.25°
+            </address>
+    </footer>
+</body>
+</html>

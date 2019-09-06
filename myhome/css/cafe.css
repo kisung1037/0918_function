@@ -1,0 +1,120 @@
+.content {width: 950px; margin-left: auto;margin-right: auto;margin-bottom: 20px;}
+
+.content table {
+    border-collapse: collapse;
+    width: 100%;
+}
+.content table th,
+.content table td {
+    border : 1px solid red;
+    padding: 5px 10px;
+    text-align: center;
+    
+
+}
+
+.content table .title,
+.content table .text {
+    text-align: left;
+    white-space: nowrap; width: 50px; overflow: hidden; text-overflow: ellipsis; border: 1px solid #000;
+}
+
+.content table .title div {
+    text-align: left;
+    white-space: nowrap; width: 500px; overflow: hidden; 
+    text-overflow: ellipsis;
+    text-decoration: none;
+}
+
+.content table .sn { width: 45px;}
+.content table .title { width: auto;}
+.content table .author { width: 79px;}
+.content table .created {width: 60px;}
+.content table .attached {width: 64px;}
+
+.content thead {
+    background-color: yellowgreen;
+}
+
+.font08 {
+    font-size: 1em; 
+}
+.font2{font-size : 2em;}
+
+/* 위쪽은 테이블로 만든 상세페이지 */
+
+/* 아래는 div로 만든 상세페이지 */
+
+.content div.title {
+    font-size : 2em;
+    font-weight: bold;
+}
+.content .info span {
+    color : gray;
+    font-weight: bold;
+}
+
+.content .info {
+    margin-top : 1em; margin-bottom: 1.5em;
+    text-align: right;
+}
+.space {
+    width: 0.3em; display: inline-block;
+}
+
+.content .menu {
+    text-align: center; 
+    border-top:1px solid lightgray;
+    margin-top : 24px;
+    padding: 24px;
+}
+
+.content .menu button {
+    background-color: lightgray;
+    padding: 10px 15px;
+    border : none;
+    border-radius: 3px;
+}
+
+/* 삭제페이지 시작 */
+.notice {
+    width: 450px;
+    margin: auto;
+    color: white;
+    background-color: #333;
+    text-align: center;
+}
+
+.notice p:before {content:"( "}
+.notice p:after {content:" )"}
+.notice p {
+    padding: 10px 15px;
+    text-align: center;
+    white-space: nowrap; width: 430px; overflow: hidden; text-overflow: ellipsis;
+}
+
+/* .notice div {
+    text-align: center;
+} */
+
+.notice button {
+    width: 50px;
+    height: 35px;
+    background-color: rgb(236, 167, 16);
+    color : black;
+}
+/* 삭제페이지 끝 */
+
+/* 글작성 시작 */
+.content div.title{
+    font-size: initial;
+    margin : initial;
+}
+.content form textarea {
+    width: 100%;
+    margin :initial;
+}
+
+.content div.title label {width: 50px; display: inline-block;}
+.content div.title input {width: 950px; text-align: center;}
+/* 글작성 끝 */

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>flex 레이아웃</title>
+    <style>
+        .flex-container{
+            display : -webkit-flex; display: flex;
+            /* flex-wrap: wrap;
+            align-content: center; */
+            
+            /* flex-wrap: wrap; */
+            /* align-items: center; */
+
+            /* flex-wrap: nowrap, warp , wrap-reverse*/
+
+            /* align-items: stretch, flex-start,flex-end,center,baseline */
+
+            /* justify-content: space-around; */
+
+
+            /* flex-direction: column-reverse; */
+            /* row , row-reverse , column, column-reverse */
+            width: 250px; height: 250px;
+            background-color: lightgray;
+            float: left;
+            margin-right: 2px; box-sizing: border-box;
+            border: solid darkgray;
+        }
+
+
+        .flex-item {
+            background-color: blue;
+            width: 50px; height: 50px; margin: 10px;
+            text-align: center;
+            line-height : 50px;
+            color : white;
+        }
+        .font2em{
+            font-size : 2em;
+        }
+        
+        .first { margin: auto;}
+        .item1 { align-self: flex-start;}
+        .item2 { align-self: center;}
+        .item3 { align-self: flex-end;}
+    </style>
+</head>
+<body>
+        <div class="flex-container">
+                <div class="flex-item item1">1</div>
+                <div class="flex-item item2 font2em first">2</div>
+                <div class="flex-item item3">3</div>
+        </div>
+        <div class="flex-container">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+                <div class="flex-item font2em first">3</div>
+                <div class="flex-item">4</div>
+                <div class="flex-item">5</div>
+                <div class="flex-item">6</div>
+                
+
+        </div>
+        <ul>
+            <li>IE11, chrome29.0, firefox22.0 이상의 최신 버전의 브라우져만 지원</li>
+        </ul>
+    
+</body>
+</html>

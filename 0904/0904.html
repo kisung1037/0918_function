@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {box-sizing: border-box;}
+        .demo {padding: 10px;}
+        .demo:hover {background: black;color: white;}
+        .demo:hover .red {background: red;}
+
+        .dropdown {width: 200px;}
+        .dropdown .dropbtn {background: coral;}
+        .dropdown .dropdown_content {display: none}
+        .dropdown:hover .dropdown_content {display: block;}
+        .dropdown_content a {display: block;margin: 0px 500px;position: absolute;}
+        .dropdown > img {position: absolute;}
+        .dropdown_content img {width: 500px;}
+    </style>
+</head>
+<body>
+    <section>
+        <h1>드롭다운을 사용하기 위한 사전지식</h1>
+        <ul>
+            <li>가상 클래스 중에 :hover</li>
+        </ul>
+    </section>
+    <div class="demo">
+        <p>가상클래스~</p>
+        <div class="red">빨강</div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">드롭다운</button>
+        <div class="dropdown_content">
+            <a href="#">메뉴1</a>
+            <a href="#">메뉴2</a>
+            <a href="#">메뉴3</a>
+        </div>
+    </div>
+    <div class="dropdown">
+            <img src="../daum_img/daum_logo.png">
+            <div class="dropdown_content">
+                <a href="#"><img src="../daum_img/daum_logo.png"></a>
+            </div>
+
+    </div>    
+    </div>
+</body>
+</html>

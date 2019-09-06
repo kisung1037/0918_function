@@ -1,0 +1,34 @@
+.content {
+    width: 100%;
+    display: block;
+}
+
+.main_f {
+    margin: 40px 440px 40px 440px;
+    padding: 20px 260px 20px 50px;
+}
+.sub_f{display: block ;margin: auto;}
+.sub_f .title {
+    font-size: 15px;
+    display: block;
+    margin-top: 10px;
+}
+
+.login_id {
+    width: 400px;height: 47px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.login_ip {
+    width: 100%;height: 42px;
+    border: none;
+    position: relative;
+}
+.btn_f{display: block;}
+.btn_f .btn_type {
+    font-size: 15px;
+    border-radius: 25px;
+    width: 100%;height:47px;;
+    background-color: #5b8000;
+    color: white;
+}
