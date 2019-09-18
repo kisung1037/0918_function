@@ -2,11 +2,7 @@
 window.onload = function() {
     console.log(myGameArea.message.docIsReady);
     myGameArea.start();
-    var ctx = myGameArea.canvas.getContext("2d");
-    ctx.fillStyle ="red";
-    ctx.fillRect(75,75,50,50);
-    this.myGamePiece = new Component(175,175,"red",50,50);
-
+    this.myGamePiece = new Component(100,100,"red",10,10);
 }
 
 var myGamePiece;
@@ -23,6 +19,11 @@ var myGameArea = {
         //document.body.insertBefore(무엇을,어디에))
         document.body.insertBefore(this.canvas, document.body.childNodes[0]);
         this.context = this.canvas.getContext("2d");
+        //타이머 적용
+        this.interval = setInterval(updateGameArea, 20); // 초당 50번 updateGameArea를 호출
+    },
+    clear : function () {
+        this.context.clearRect(0,0,this.canvas.width,this.canvas.height);
     }
 }
 
@@ -33,6 +34,17 @@ function Component(w,h,c,x,y) {
     this.c = c;
     this.x = x;
     this.y = y;
-    ctx.fillStyle = c;
-    ctx.fillRect(this.x,this.y,this.w,this.h);
+    //외부 실행을 위해 함수에 포함
+    this.update = function() {
+        ctx = myGameArea.context;
+        ctx.fillStyle = c;
+        ctx.fillRect(this.x,this.y,this.w,this.h);
+    }
+}
+
+//화면 제어를 위한 함수
+function updateGameArea(){
+    myGameArea.clear();
+    myGamePiece.x += 1;
+    myGamePiece.update();
 }
