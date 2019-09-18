@@ -42,7 +42,7 @@ function Component(w,h,c,x,y) {
     }
 }
 
-//화면 제어를 위한 함수
+//화면 제어를 위한 함수1
 function updateGameArea(){
     myGameArea.clear();
     myGamePiece.x += 1;
