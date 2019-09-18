@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <button type="button" onclick="addText(this)">1</button>
+    <button type="button" onclick="addText(this)">+</button>
+    <button type="button" onclick="addText(this)">2</button>
+    <button type="button" onclick="addText(this)">*</button>
+    <button type="button" onclick="addText(this)">(,)</button>
+    <button type="button" onclick="showResu()">=</button>
+    <span id="result"></span><br>
+    <button type="button" onclick="bSpace()">←</button>
+    <button type="button" onclick="clear()">C</button>
+</body>
+<script>
+    var inVal="",lastIn="";
+    function addText(obj) {
+        var text = obj.textContent;
+        if(checkDupSign(text)){
+            //기호가 중복되면
+        }else{
+            //기호가 중복이 아닌경우
+        lastIn = text; // checkDupSign에서 마지막 입력 키를 비교하기 위해 보관
+        inVal += text; // inVal = inVal + text;
+    }
+        showInVal();
+    }
+    function showInVal() {
+        document.getElementById("demo").innerHTML = inVal;
+    }
+    function checkDupSign(str) {
+        // 주어진 값이 중복된 기호이면 true, 중복이 아니면 false를 반환한다
+        var signs ="+-*/"
+        var result = false;
+        //str이 문자이고, 마지막 입력값과 같으면
+        if(signs.indexOf(str) !==-1 && lastIn===str){
+            result = true;
+        }
+        return result;
+    }
+    function bSpace() {
+        inVal = inVal.slice(0,-1);
+        lastIn = inVal.slice(-1);
+
+        showInVal();
+    }
+    function showResu() {
+        var result = eval(inVal);
+        document.getElementById("result").innerHTML = result;
+        // alert(result);
+    }
+    function clear() {
+        inVal = inVal.slice(0,-1);
+
+        document.getElementById("demo").innerHTML = inVal;
+    }
+    function gaBtn(ga) {
+        var garo[] = ga.textContent;
+        if (garo === "("){
+            garo = garo.slice(0);
+        }else{
+            garo = garo.slice(1);
+        }
+        document.getElementById("demo").innerHTML = garo;
+    }
+</script>
+</html>

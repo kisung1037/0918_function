@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        button { width: 50px;height: 50px;border: 1px solid black;margin: 5px;}
+    </style>
+</head>
+
+<body>
+    <section>
+        <ol>
+            우리나라 인구는<br> 
+            <span id="num1"></span>만이고<br>
+            수도의 인구는 <br>
+            <span id="num2"></span>만입니다<br>
+
+        </ol>
+
+        <button type="button" onclick="n1=n1+'1'">1</button>
+        <button type="button" onclick="n1=n1+'2'">2</button>
+        <button type="button" onclick="n1=n1+'3'">3</button>
+        <button type="button" onclick="n1=n1+'0'">0</button>
+        <button type="button" onclick="n1=n1+'+'">+</button><br>
+        <button type="button" onclick="n1=n1+'*'">X</button>
+        <button type="button" onclick="eqaul()">클릭</button>
+        <button type="button" onclick="clear()">clear</button>
+    </section>
+</body>
+<script>
+    var n1="";
+    var n2="";
+    function eqaul(){
+        var result = eval(n1);
+        document.getElementById("num1").innerHTML = result;
+    }
+    function eqaul(){
+        var result = eval(n2);
+        document.getElementById("num2").innerHTML = result;
+    }
+    function clear(){
+        var result = "";
+        document.getElementById("num2").innerHTML = result;
+    }
+</script>
+</html>

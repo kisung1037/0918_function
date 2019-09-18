@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <script>
+        var person ={
+            first:"홍",
+            last : "길동",
+            fullName: function() {return this.first+" "+this.last}
+        }
+        var people ={
+            first:"이",
+            last:"순신"
+        }
+        person.fullName();
+        person.fullName.call(people);
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="0909.css">
+</head>
+<body>
+    <button type="button" onclick="clearText()">클리어</button>
+    <button type="button" onclick="showResult()">결과확인</button>
+    <p id="textresult"></p>
+<div class="layout">
+    <div class="leftArea">
+        <p>한글입력</p>
+        <ul>
+            <li><button type="button" onclick="addText(this)">우리나라</button></li>
+            <li><button type="button" onclick="addText(this)"> 인구는 </button></li>
+            <li><button type="button" onclick="addText(this)">만이고 </button></li>
+            <li><button type="button" onclick="addText(this)">수도의</button></li>
+            <li><button type="button" onclick="addText(this)">의 </button></li>
+            <li><button type="button" onclick="addText(this)">만 입니다</button></li>
+        </ul>
+        <p>숫자계산</p>
+        <ul>
+            <li><button type="button" onclick="addNum(this)">1</button></li>
+            <li><button type="button" onclick="addNum(this)">2</button></li>
+            <li><button type="button" onclick="addNum(this)">3</button></li>
+            <li><button type="button" onclick="addNum(this)">0</button></li>
+            <li><button type="button" onclick="addSign(this)">+</button></li>
+            <li><button type="button" onclick="addSign(this)">*</button></li>
+            <li><button type="button" onclick="addSign(this)">=</button></li>
+
+        </ul>
+    </div>
+    <div class="rightArea">
+        <div id="textHistory"></div>
+    </div>
+</div>
+</body>
+<script src="0909.js"></script>
+</html>

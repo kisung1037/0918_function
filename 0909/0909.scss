@@ -1,0 +1,10 @@
+.layout{
+    &::after {
+        content:""; display: block;clear: both;
+    }
+    .leftArea,
+    .rightArea{
+        float: left;
+        width: 50%;
+    }
+}

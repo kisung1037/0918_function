@@ -1,0 +1,12 @@
+.layout::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.layout .leftArea,
+.layout .rightArea {
+  float: left;
+  width: 50%;
+}
+/*# sourceMappingURL=0909.css.map */

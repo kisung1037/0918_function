@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        canvas {
+            border: 1px solid #d3d3d3;
+            background-color: #f1f1f1;
+        }
+        #controller { text-align: center; width: 400px; }
+    </style>
+</head>
+<body onload="startGame()">
+<script>
+    var myGamePiece, controller;
+    function startGame() {
+        myGamePiece = new component(30, 30, "red", 10, 120);
+        myGameArea.start();
+    }
+    var myGameArea = {
+        canvas : document.createElement("canvas"),
+        start : function() {
+            // 캔버스를 만든다.
+            this.canvas.width = 400;
+            this.canvas.height = 270;
+            document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+            // 붉은 상자(객체) 만들기
+            this.context = this.canvas.getContext("2d");
+            // 화면을 제어하기 위한 타이버를 생성
+            this.interval = setInterval(updateGameArea, 20);
+            // 버튼 이벤트
+            this.btnUp = document.getElementById("up");
+            this.btnDn = document.getElementById("dn");
+            this.btnLf = document.getElementById("lf");
+            this.btnRt = document.getElementById("rt");
+            // 이벤트 추가
+            this.btnUp.addEventListener('mouseup', clearmove);
+            this.btnUp.addEventListener('mousedown', moveUp);
+            this.btnDn.addEventListener('mouseup', clearmove);
+            this.btnDn.addEventListener('mousedown', moveDown);
+            this.btnLf.addEventListener('mouseup', clearmove);
+            this.btnLf.addEventListener('mousedown', moveLeft);
+            this.btnRt.addEventListener('mouseup', clearmove);
+            this.btnRt.addEventListener('mousedown', moveRight);
+        },
+        clear : function() {
+            this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+        }
+    }
+    function component(width, height, color, x, y) {
+        this.width = width;
+        this.height = height;
+        this.x = x;
+        this.y = y;
+        this.speedX = 0;
+        this.speedY = 0;
+        this.update = function() {
+            // 붉은 상자(객체) 만들기
+            ctx = myGameArea.context;
+            ctx.fillStyle = color;
+            ctx.fillRect(this.x, this.y, this.width, this.height);
+        }
+        this.newPos = function() {
+            this.x += this.speedX;
+            this.y += this.speedY;
+        }
+    }
+
+    function updateGameArea() {
+        myGameArea.clear();
+        myGamePiece.newPos();
+        myGamePiece.update();
+    }
+
+    function moveRight() {
+        // myGamePiece.speedX = myGamePiece.speedX + 1;
+        myGamePiece.speedX = 1;
+    }
+    function moveLeft() { myGamePiece.speedX = -1; }
+    function moveUp() { myGamePiece.speedY = -1; }
+    function moveDown() { myGamePiece.speedY = 1; }
+    function clearmove() { myGamePiece.speedX = 0; myGamePiece.speedY = 0; }
+</script>
+<div id="controller">
+    <button data-direction="up" id="up">상</button><br>
+    <button data-direction="lf" id="lf">좌</button>
+    <button data-direction="rt" id="rt">우</button><br>
+    <button data-direction="dn" id="dn">하</button>
+</div>
+<p>
+    배경에서 타이머가 updateGameArea()를 계속 실행하고 있음.
+    <h1>오른쪽으로 이동</h1>
+    <ul>
+        <li>'우'버튼을 클릭</li>
+        <li>moveRight() => mGP의 speedX를 1 증가</li>
+        <li>updateGameArea의 mGP의 newPos(), update()를 실행
+            <ul>
+                <li>newPos()는 자신의 x를 speedX만큼 증감</li>
+                <li>update()는 화면에 바뀐 x를 적용해 그려준다.</li>
+            </ul>
+        </li>
+    </ul>
+</p>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        canvas {
+            border: 1px solid #d3d3d3;
+            background-color: #f1f1f1;
+        }
+        #controller {
+            text-align: center;
+            width: 400px;
+        }
+    </style>
+</head>
+<body onload="startGame()">
+    <script>
+        var myGamePiece;
+        function startGame () {
+            myGamePiece = new component(30,30,"red",10,120);
+            myGameArea.start()
+        }
+        var myGameArea ={
+            canvas : document.createElement("canvas"),
+            start : function(){
+                this.canvas.width = 800;
+                this.canvas.height = 270;
+                document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+                this.context = this.canvas.getContext("2d");
+                this.interval = setInterval(updateGameArea, 20);
+                // this.controller = document.querySelectorAll("#controller > button")//버튼 이벤트
+                // for (i=0 ; i<this.controller.length;i++){
+                //     this.controller[i].addEventListener("click",this.myFn1);
+                // }
+                this.btnUp = document.getElementById("up")
+                this.btnDn = document.getElementById("dn")
+                this.btnLf = document.getElementById("lf")
+                this.btnRt = document.getElementById("rt")
+                //이벤트 추가
+                this.btnUp.addEventListener("mouseup", clearmove)
+                this.btnUp.addEventListener("mousedown", moveUp)
+                this.btnDn.addEventListener("mouseup", clearmove)
+                this.btnDn.addEventListener("mousedown", moveDown)
+                this.btnLf.addEventListener("mouseup", clearmove)
+                this.btnLf.addEventListener("mousedown", moveLeft)
+                this.btnRt.addEventListener("mouseup", clearmove)
+                this.btnRt.addEventListener("mousedown", moveRight)
+                //
+                window.addEventListener('keydown',function(e){
+                    myGameArea.key = e.keyCode;
+                });
+                window.addEventListener('keyup',function(e){
+                    myGameArea.key = false;
+                });
+            },
+            clear : function() {
+                this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+            }
+        }
+        function component(width,height,color,x,y) {
+            this.width = width;
+            this.height = height;
+            this.x = x;
+            this.y= y;
+            this.speedX = 0;
+            this.speedY = 0;
+            this.update = function(){
+                ctx = myGameArea.context;
+                ctx.fillStyle= color;
+                ctx.fillRect(this.x,this.y,this.width,this.height);
+            }
+            this.newPos = function() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+            }
+        }
+        function updateGameArea() {
+            myGameArea.clear();
+            myGamePiece.newPos();
+            myGamePiece.update();
+            if(myGameArea.key && myGameArea.key == 37) {moveLeft()};
+            if(myGameArea.key && myGameArea.key == 39) {moveRight()};
+            if(myGameArea.key && myGameArea.key == 38) {moveUp()};
+            if(myGameArea.key && myGameArea.key == 40) {moveDown()};
+            if(!myGameArea.key) {clearmove()};
+        }
+        
+        function moveUp() {
+            myGamePiece.speedY = -1;
+        }
+        function moveRight() {
+            myGamePiece.speedX = 1;
+        }
+        
+        function moveLeft() {
+            myGamePiece.speedX = -1;
+        }
+        
+        function moveDown() {
+            myGamePiece.speedY = 1;
+        }
+        function clearmove() {
+            myGamePiece.speedY =0;myGamePiece.speedX =0;
+        }
+    </script>
+    <div id="controller">
+        <button data-direction="up" id="up">▲</button>
+        <button data-direction="dn" id="dn">▼</button><br>
+        <button data-direction="lf" id="lf">◀</button>
+        <button data-direction="rt" id="rt">▶</button>
+    </div>
+</body>
+</html>
