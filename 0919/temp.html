@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo"></div>
+    <script>
+        var el = document.getElementById("demo");
+        var arrObj ={
+            n2 : [1,1,1,1,1,0,1,1,1,1,1,0,1,1,1],
+            n8 : [1,1,1,1,1,0,1,1,1,1,1,0,1,1,1]
+        }
+        var n = 0;
+        var str = "";
+        function digiNum(n) {
+            //n이 8이면 arrObj.n8
+            var obj = arrObj["n"+n];
+            for (i=0;i<obj.length;i++) {
+                if(i>0 && i%3 === 0) str += "<br>";
+                str += obj[i];
+            }
+            el.innerHTML = str;
+        }
+        digiNum(2);
+        // var arr8x1 = [1,1,1,1,1,0,1,1,1,1,1,0,1,1,1]
+        // var arr8x2 = [[1,1,1],[1,1,0],[1,1,1],[1,1,0],[1,1,1]];
+        // var str = "11101111101111"
+        // var arr = [];
+        // arr[0] = 0;
+        // arr.push(1);
+        // arr[arr.length] = 2;
+
+        // var str= 0;
+        // for (i=0;i<100;i++) {
+        //     if( i>0 && i%10 === 3) {
+        //          str += i;
+        //         }
+        // }
+        // el.innerHTML = str;
+
+        // var sum = 0;
+        // for (i =0; i<100;i++) {
+        //     var num = ""+i;
+        //     if(num.indexOf("3")>-1){
+        //         sum += i;
+        //     }
+        // }
+        // el.innerHTML = sum;
+
+    </script>
+</body>
+</html>
