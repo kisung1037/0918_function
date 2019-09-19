@@ -71,8 +71,8 @@ function moveLeft() {
     myGamePiece.x =-1;
 }
 function moveStop() {
-    myGamePiece.x =0;
-    myGamePiece.y =0;
+    myGamePiece.speedX = 0;
+    myGamePiece.speedY = 0;
 }
 //화면 제어를 위한 함수1
 function updateGameArea(){
@@ -83,7 +83,7 @@ function updateGameArea(){
     if (mGAkey && mGAkey === 39) myGamePiece.speedX = 1;
     if (mGAkey && mGAkey === 38) myGamePiece.speedY = -1;
     if (mGAkey && mGAkey === 40) myGamePiece.speedY = 1;
-    if (!mGAkey) myGameArea.clear();
+    if (!mGAkey) moveStop();
     myGamePiece.newPos();
     myGamePiece.update();
     // for (var i=0;i<5;i++) {
